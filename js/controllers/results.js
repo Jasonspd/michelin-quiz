@@ -10,6 +10,7 @@
 		view.dataService = dataService;
 		view.quizFactory = quizFactory;
 
+		//Resets score and reset quiz
 		function retryQuiz() {
 			quizFactory.changeState("results", false);
 			quizFactory.numCorrect = 0;

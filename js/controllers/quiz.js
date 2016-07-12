@@ -14,13 +14,16 @@
 		var numAnswered = 0;
 		var selectedAnswers = [];
 
+		//Passes the answers for marking, resetting the selected answers and move to results page
 		function checkScore(){
 			view.activeQuestions = 0;
 			quizFactory.markQuiz(selectedAnswers);
+			selectedAnswers.length = 0;
 			quizFactory.changeState("quiz", false);
 			quizFactory.changeState("results", true);
 		}
 
+		//Put answers into an array
 		function questionAnswered(index) {
 
 			selectedAnswers.push(index);

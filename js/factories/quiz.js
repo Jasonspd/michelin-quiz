@@ -15,6 +15,7 @@
 		
 		return quizObj;
 
+		// Change from quiz to results page
 		function changeState(selection, state){
 			
 			if(selection === "quiz"){
@@ -27,12 +28,14 @@
 
 		}
 
-		function markQuiz(results){
+		// Checks array of selected answers with correct answers and sums up score
+		function markQuiz(selected){
 			quizObj.correctAnswers = dataService.correctAnswers;
-			for(var i = 0; i<results.length; i++){
-				if(results[i] === dataService.correctAnswers[i]){
+			for(var i = 0; i<selected.length; i++){
+				if(selected[i] === dataService.correctAnswers[i]){
 					quizObj.numCorrect++;
 				} else{
+					//Do nothing
 				}
 			}
 		}

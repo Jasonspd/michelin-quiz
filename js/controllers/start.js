@@ -10,6 +10,7 @@
 		view.data = dataService.quizData;
 		view.activateQuiz = activateQuiz;
 
+		//Start the quiz
 		function activateQuiz(){
 			quizFactory.changeState("quiz", true);
 			quizFactory.activeQuestions = 0;
