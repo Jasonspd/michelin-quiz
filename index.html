@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html ng-app="michelinQuiz">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Michelin 2015</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-header">
+                <h1>Michelin 2015 Quiz</h1>
+            </div>
+
+            <div class="home" ng-controller="startCtrl as start" ng-hide="start.quizFactory.quizActive || start.quizFactory.resultsActive">
+                <div class="startQuiz">
+                    <img src="assets/start_button.png" ng-click="start.activateQuiz()" />
+                </div>
+            </div>
+
+            <div ng-controller="quizCtrl as quiz" ng-show="quiz.quizFactory.quizActive">
+                <h1>Quiz</h1>
+                <div class="row">
+                    <div class="container">
+
+                        <div class="quiz">
+
+                            <img class="questions" src="./assets/bg{{quiz.activeQuestions+1}}.jpg"/>
+                            <span class="question-title">{{quiz.dataService.quizData[quiz.activeQuestions].question}}</span>
+                        
+                            <div class="main">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 choices" ng-repeat="choices in quiz.dataService.quizData[quiz.activeQuestions].options">
+                                    <img class="choices" src="./assets/answers/{{choices}}" ng-click="quiz.questionAnswered($index)"/>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div ng-controller="resultsCtrl as results" ng-show="results.quizFactory.resultsActive">
+                <h1><img src="./assets/you_got.png" /></h1>
+                <h3>{{results.quizFactory.numCorrect}} / {{results.dataService.quizData.length}} correct</h3>
+                <div class="col-md-12">
+                    <img src="./assets/retry_button.png" ng-click="results.retryQuiz()" />
+                </div>
+                <div class="col-md-12">
+                    <img src="./assets/share_result.png"/>
+                </div>
+                <div class="col-md-6">
+                    <img src="./assets/twitter_button.png"/>
+                </div>
+                <div class="col-md-6">
+                    <img src="./assets/facebook_button.png"/>
+                </div>
+            </div>
+
+        </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/start.js"></script>
+    <script src="js/controllers/quiz.js"></script>
+    <script src="js/controllers/results.js"></script>
+    <script src="js/factories/quiz.js"></script>
+    <script src="js/factories/data.js"></script>
+    </body>
+</html>
