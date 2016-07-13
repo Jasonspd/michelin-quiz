@@ -7,12 +7,12 @@ img {
 }
 
 body {
-	color: #fff;
     background: url("../assets/quiz_bg.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    color: #fff;
 }
 
 img.questions {
@@ -112,6 +112,7 @@ img.choices:hover {
 
 @media screen and (min-width: 767px) {
     .question-title {
+    	padding: 5px;
         position: absolute;
         font-size: 20px;
         background-color: #fff;
