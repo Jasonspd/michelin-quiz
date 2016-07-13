@@ -7,5 +7,4 @@ Simply fork the repo and open index.html to run.
 ###TODO:
 - More general styling
 - Fix responsiveness of main quiz layout
-- Facebook share button
 - Look into best practices for Angular

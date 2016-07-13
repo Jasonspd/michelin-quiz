@@ -19,7 +19,7 @@
             </div>
 
             <!-- Start page -->
-            <div class="home" ng-controller="startCtrl as start" ng-hide="start.quizFactory.quizActive || start.quizFactory.resultsActive">
+            <div  ng-controller="startCtrl as start" ng-hide="start.quizFactory.quizActive || start.quizFactory.resultsActive">
                 <div class="startQuiz">
                     <a href="#"><img class="imgstart" src="assets/start_button.png" ng-click="start.activateQuiz()" /></a>
                 </div>
@@ -50,14 +50,11 @@
                         <div class="col-md-12">
                             <img class="imgresults" src="./assets/share_result.png"/>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <a class="twitter-share-button"
                               href="https://twitter.com/intent/tweet?text=Just%20scored%20{{results.quizFactory.numCorrect}}/{{results.dataService.quizData.length}}%20in%20the%20Michelin%20quiz!">
                               <img class="imgsocial" src="./assets/twitter_button.png"/> <!-- Share on twitter -->
                             </a>
-                        </div>
-                        <div class="col-md-6">
-                            <img class="imgsocial" src="./assets/facebook_button.png"/> <!-- No sharing on facebook -->
                         </div>
                     </div>
                 </div>
