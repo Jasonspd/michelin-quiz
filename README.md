@@ -2,7 +2,7 @@
 
 I decided to learn Angular and use it for the first time building the michelin quiz.
 
-Simply fork the repo and open the html file to run.
+Simply fork the repo and open index.html to run.
 
 ###TODO:
 - More general styling
